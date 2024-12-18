@@ -1,0 +1,22 @@
+[package]
+name = "client"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+
+
+[dependencies]
+json = "0.12"
+winreg = "0.52.0"
+
+[package.metadata]
+windows = { "console" = true }
+
+[package.metadata.winres]
+windows_subsystem = "windows"
